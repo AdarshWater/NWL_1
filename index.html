@@ -42,9 +42,9 @@
         <script src="js/tailDT.js"></script>
 <script src="js/nouislider.min.js"></script>
 <script src="js/wNumb.js"></script>
-        <script src="data/Sites_1.js"></script>
-        <script src="data/Pipes_2.js"></script>
-        <script src="data/Chambers_3.js"></script>
+        <script src="data/Pipes_1.js"></script>
+        <script src="data/Chambers_2.js"></script>
+        <script src="data/Sites_3.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
@@ -137,50 +137,7 @@
         });
         layer_GoogleSatellite_0;
         map.addLayer(layer_GoogleSatellite_0);
-        function pop_Sites_1(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">Area</th>\
-                        <td>' + (feature.properties['Area'] !== null ? autolinker.link(feature.properties['Area'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_Sites_1_0() {
-            return {
-                pane: 'pane_Sites_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,0.23)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(210,210,210,0.23)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_Sites_1');
-        map.getPane('pane_Sites_1').style.zIndex = 401;
-        map.getPane('pane_Sites_1').style['mix-blend-mode'] = 'normal';
-        var layer_Sites_1 = new L.geoJson(json_Sites_1, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_Sites_1',
-            layerName: 'layer_Sites_1',
-            pane: 'pane_Sites_1',
-            onEachFeature: pop_Sites_1,
-            style: style_Sites_1_0,
-        });
-        bounds_group.addLayer(layer_Sites_1);
-        map.addLayer(layer_Sites_1);
-        function pop_Pipes_2(feature, layer) {
+        function pop_Pipes_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">ID</th>\
@@ -206,11 +163,11 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Pipes_2_0(feature) {
+        function style_Pipes_1_0(feature) {
             switch(String(feature.properties['RAG_1'])) {
                 case 'Amber':
                     return {
-                pane: 'pane_Pipes_2',
+                pane: 'pane_Pipes_1',
                 opacity: 1,
                 color: 'rgba(255,178,13,1.0)',
                 dashArray: '',
@@ -223,7 +180,7 @@
                     break;
                 case 'Green':
                     return {
-                pane: 'pane_Pipes_2',
+                pane: 'pane_Pipes_1',
                 opacity: 1,
                 color: 'rgba(51,160,44,1.0)',
                 dashArray: '',
@@ -236,7 +193,7 @@
                     break;
                 case 'No Info':
                     return {
-                pane: 'pane_Pipes_2',
+                pane: 'pane_Pipes_1',
                 opacity: 1,
                 color: 'rgba(169,34,190,1.0)',
                 dashArray: '',
@@ -249,7 +206,7 @@
                     break;
                 case 'Others':
                     return {
-                pane: 'pane_Pipes_2',
+                pane: 'pane_Pipes_1',
                 opacity: 1,
                 color: 'rgba(169,34,190,1.0)',
                 dashArray: '',
@@ -262,7 +219,7 @@
                     break;
                 case 'Red':
                     return {
-                pane: 'pane_Pipes_2',
+                pane: 'pane_Pipes_1',
                 opacity: 1,
                 color: 'rgba(236,35,35,1.0)',
                 dashArray: '',
@@ -275,21 +232,21 @@
                     break;
             }
         }
-        map.createPane('pane_Pipes_2');
-        map.getPane('pane_Pipes_2').style.zIndex = 402;
-        map.getPane('pane_Pipes_2').style['mix-blend-mode'] = 'normal';
-        var layer_Pipes_2 = new L.geoJson(json_Pipes_2, {
+        map.createPane('pane_Pipes_1');
+        map.getPane('pane_Pipes_1').style.zIndex = 401;
+        map.getPane('pane_Pipes_1').style['mix-blend-mode'] = 'normal';
+        var layer_Pipes_1 = new L.geoJson(json_Pipes_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Pipes_2',
-            layerName: 'layer_Pipes_2',
-            pane: 'pane_Pipes_2',
-            onEachFeature: pop_Pipes_2,
-            style: style_Pipes_2_0,
+            dataVar: 'json_Pipes_1',
+            layerName: 'layer_Pipes_1',
+            pane: 'pane_Pipes_1',
+            onEachFeature: pop_Pipes_1,
+            style: style_Pipes_1_0,
         });
-        bounds_group.addLayer(layer_Pipes_2);
-        map.addLayer(layer_Pipes_2);
-        function pop_Chambers_3(feature, layer) {
+        bounds_group.addLayer(layer_Pipes_1);
+        map.addLayer(layer_Pipes_1);
+        function pop_Chambers_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Name</th>\
@@ -303,9 +260,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Chambers_3_0() {
+        function style_Chambers_2_0() {
             return {
-                pane: 'pane_Chambers_3',
+                pane: 'pane_Chambers_2',
                 radius: 2.4,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
@@ -315,30 +272,73 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(0,0,0,1.0)',
+                fillColor: 'rgba(1,243,239,1.0)',
                 interactive: true,
             }
         }
-        map.createPane('pane_Chambers_3');
-        map.getPane('pane_Chambers_3').style.zIndex = 403;
-        map.getPane('pane_Chambers_3').style['mix-blend-mode'] = 'normal';
-        var layer_Chambers_3 = new L.geoJson(json_Chambers_3, {
+        map.createPane('pane_Chambers_2');
+        map.getPane('pane_Chambers_2').style.zIndex = 402;
+        map.getPane('pane_Chambers_2').style['mix-blend-mode'] = 'normal';
+        var layer_Chambers_2 = new L.geoJson(json_Chambers_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Chambers_3',
-            layerName: 'layer_Chambers_3',
-            pane: 'pane_Chambers_3',
-            onEachFeature: pop_Chambers_3,
+            dataVar: 'json_Chambers_2',
+            layerName: 'layer_Chambers_2',
+            pane: 'pane_Chambers_2',
+            onEachFeature: pop_Chambers_2,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Chambers_3_0(feature));
+                return L.circleMarker(latlng, style_Chambers_2_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Chambers_3);
-        map.addLayer(layer_Chambers_3);
+        bounds_group.addLayer(layer_Chambers_2);
+        map.addLayer(layer_Chambers_2);
+        function pop_Sites_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Area</th>\
+                        <td>' + (feature.properties['Area'] !== null ? autolinker.link(feature.properties['Area'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_Sites_3_0() {
+            return {
+                pane: 'pane_Sites_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,0.23)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(210,210,210,0.23)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Sites_3');
+        map.getPane('pane_Sites_3').style.zIndex = 403;
+        map.getPane('pane_Sites_3').style['mix-blend-mode'] = 'normal';
+        var layer_Sites_3 = new L.geoJson(json_Sites_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Sites_3',
+            layerName: 'layer_Sites_3',
+            pane: 'pane_Sites_3',
+            onEachFeature: pop_Sites_3,
+            style: style_Sites_3_0,
+        });
+        bounds_group.addLayer(layer_Sites_3);
+        map.addLayer(layer_Sites_3);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
@@ -351,9 +351,9 @@
         .title += 'Search for a place';
         var baseMaps = {};
         var overlaysTree = [
-            {label: '<img src="legend/Chambers_3.png" /> Chambers', layer: layer_Chambers_3},
-            {label: 'Pipes<br /><table><tr><td style="text-align: center;"><img src="legend/Pipes_2_AmberMaybeBlocked0.png" /></td><td>Amber - May be Blocked</td></tr><tr><td style="text-align: center;"><img src="legend/Pipes_2_GreenNotBlocked1.png" /></td><td>Green - Not Blocked</td></tr><tr><td style="text-align: center;"><img src="legend/Pipes_2_NoInfo2.png" /></td><td>No Info</td></tr><tr><td style="text-align: center;"><img src="legend/Pipes_2_Others3.png" /></td><td>Others - </td></tr><tr><td style="text-align: center;"><img src="legend/Pipes_2_RedBlocked4.png" /></td><td>Red - Blocked</td></tr></table>', layer: layer_Pipes_2},
-            {label: '<img src="legend/Sites_1.png" /> Sites', layer: layer_Sites_1},
+            {label: '<img src="legend/Sites_3.png" /> Sites', layer: layer_Sites_3},
+            {label: '<img src="legend/Chambers_2.png" /> Chambers', layer: layer_Chambers_2},
+            {label: 'Pipes<br /><table><tr><td style="text-align: center;"><img src="legend/Pipes_1_AmberMaybeBlocked0.png" /></td><td>Amber - May be Blocked</td></tr><tr><td style="text-align: center;"><img src="legend/Pipes_1_GreenNotBlocked1.png" /></td><td>Green - Not Blocked</td></tr><tr><td style="text-align: center;"><img src="legend/Pipes_1_NoInfo2.png" /></td><td>No Info</td></tr><tr><td style="text-align: center;"><img src="legend/Pipes_1_Others3.png" /></td><td>Others - </td></tr><tr><td style="text-align: center;"><img src="legend/Pipes_1_RedBlocked4.png" /></td><td>Red - Blocked</td></tr></table>', layer: layer_Pipes_1},
             {label: "Google Satellite", layer: layer_GoogleSatellite_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
@@ -367,25 +367,12 @@
         lay.addTo(map);
         setBounds();
         var i = 0;
-        layer_Sites_1.eachLayer(function(layer) {
+        layer_Chambers_2.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Area'] !== null?String('<div style="color: #01ffe6; font-size: 20pt; font-weight: bold; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['Area']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Sites_1'});
-            labels.push(layer);
-            totalMarkers += 1;
-              layer.added = true;
-              addLabel(layer, i);
-              i++;
-        });
-        var i = 0;
-        layer_Chambers_3.eachLayer(function(layer) {
-            var context = {
-                feature: layer.feature,
-                variables: {}
-            };
-            layer.bindTooltip((layer.feature.properties['Name'] !== null?String('<div style="color: #ffdf2b; font-size: 7pt; font-weight: bold; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['Name']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Chambers_3'});
+            layer.bindTooltip((layer.feature.properties['Name'] !== null?String('<div style="color: #ffff29; font-size: 6pt; font-weight: bold; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['Name']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Chambers_2'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -499,25 +486,12 @@
           this[lyr["options"]["layerName"]].clearLayers();
           this[lyr["options"]["layerName"]].addData(features);
         var i = 0;
-        layer_Sites_1.eachLayer(function(layer) {
+        layer_Chambers_2.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Area'] !== null?String('<div style="color: #01ffe6; font-size: 20pt; font-weight: bold; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['Area']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Sites_1'});
-            labels.push(layer);
-            totalMarkers += 1;
-              layer.added = true;
-              addLabel(layer, i);
-              i++;
-        });
-        var i = 0;
-        layer_Chambers_3.eachLayer(function(layer) {
-            var context = {
-                feature: layer.feature,
-                variables: {}
-            };
-            layer.bindTooltip((layer.feature.properties['Name'] !== null?String('<div style="color: #ffdf2b; font-size: 7pt; font-weight: bold; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['Name']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Chambers_3'});
+            layer.bindTooltip((layer.feature.properties['Name'] !== null?String('<div style="color: #ffff29; font-size: 6pt; font-weight: bold; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['Name']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Chambers_2'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -561,15 +535,15 @@
                 filterFunc();
             };
             div_RAG_1.appendChild(reset_RAG_1);
-        resetLabels([layer_Sites_1,layer_Pipes_2,layer_Chambers_3]);
+        resetLabels([layer_Pipes_1,layer_Chambers_2,layer_Sites_3]);
         map.on("zoomend", function(){
-            resetLabels([layer_Sites_1,layer_Pipes_2,layer_Chambers_3]);
+            resetLabels([layer_Pipes_1,layer_Chambers_2,layer_Sites_3]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_Sites_1,layer_Pipes_2,layer_Chambers_3]);
+            resetLabels([layer_Pipes_1,layer_Chambers_2,layer_Sites_3]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_Sites_1,layer_Pipes_2,layer_Chambers_3]);
+            resetLabels([layer_Pipes_1,layer_Chambers_2,layer_Sites_3]);
         });
         </script>
     </body>
